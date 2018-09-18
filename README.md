@@ -5,8 +5,8 @@ LineEmoji
 Convert text to LineEmoji
 ![demo](./images/demo.png)
 
-Fake notification
-![fake](https://user-images.githubusercontent.com/16555696/45687495-edd6ef80-bb89-11e8-8c60-6dba947a9ac8.PNG)
+Fake notification  
+![fake](https://user-images.githubusercontent.com/16555696/45687850-c92f4780-bb8a-11e8-99a3-dd6e101cf51e.PNG)
 ## Requirements
 - python3
 - requests
