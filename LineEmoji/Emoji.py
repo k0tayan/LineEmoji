@@ -91,7 +91,7 @@ class Emoji:
                         string += f.firstChild.data
         return string
 
-    def convert(self, string="Hello, World", japanese_font=0xac, alphabet_font=0x9c):
+    def convert(self, string="Hello, World", japanese_font=0xac, alphabet_font=0x9c, fake_notification=""):
         """
 
         :param string: 変換したい文字列 string you want to convert
@@ -104,6 +104,8 @@ class Emoji:
         font = None
         j_font = japanese_font
         a_font = alphabet_font
+        if fake_notification:
+            fake_notification = fake_notification.encode('utf-8', 'replace').hex()
         texts = self.__text_to_hiragana(string)
         for text in texts:
             flag = False
@@ -116,7 +118,7 @@ class Emoji:
             if flag is False:
                 output += text
             else:
-                char = "f482" + self.__cast_hex(font) + "81f480" + ww + "f48fbfbf"
+                char = "f482" + self.__cast_hex(font) + "81f480" + ww + fake_notification + "f48fbfbf"
                 output += binascii.unhexlify(char).decode()
         return output
 
